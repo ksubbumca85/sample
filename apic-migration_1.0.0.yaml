@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  title: APIC Migration
+  title: APIC Migration Title
   x-ibm-name: apic-migration
   version: 1.0.0
 x-ibm-configuration:
