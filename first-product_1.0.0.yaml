@@ -1,0 +1,54 @@
+info:
+  version: 1.0.0
+  title: First Product
+  name: first-product
+gateways:
+  - datapower-api-gateway
+plans:
+  gold-plan:
+    title: Gold Plan
+    description: Gold Plan
+    rate-limits:
+      default:
+        value: 10/1minute
+    apis:
+      proxy-api-service1.0.0: {}
+  bronze-plan:
+    title: Bronze Plan
+    description: Bronze Plan
+    rate-limits:
+      Default rate-limit:
+        value: 5/1minute
+        hard-limit: false
+    burst-limits:
+      Default burst-limit:
+        value: 10/1second
+    apis:
+      proxy-api-service1.0.0: {}
+  silver-plan:
+    title: Silver Plan
+    description: Silver Plan
+    rate-limits:
+      Default rate-limit:
+        value: 20/1minute
+        hard-limit: false
+    burst-limits:
+      Default burst-limit:
+        value: 10/1second
+    apis:
+      proxy-api-service1.0.0: {}
+apis:
+  proxy-api-service1.0.0:
+    $ref: .\proxy-api-service_1.0.0.yaml
+visibility:
+  view:
+    type: public
+    orgs: []
+    tags: []
+    enabled: true
+  subscribe:
+    type: authenticated
+    orgs: []
+    tags: []
+    enabled: true
+product: 1.0.0
